@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Store</title>
+</head>
+
+<body>
+    <main class="wrapper">
+
+        <aside class="stores-container">
+
+            <header class="stores-search-block">
+
+                <h4 class="stores-block-title">Stores list</h4>
+
+                <div class="search-container" id="stores-search-id">
+                    <input type="text" placeholder="Search" class="search-input" id="store-filter">
+                    <div class="delete-img" id="delete-search-text"></div>
+                    <div class="search-img" id="search"></div>
+                    <div class="refresh-img" id="refresh"></div>
+                </div>
+
+            </header>
+
+            <div class="stores-icons">
+                <div class="stores-up-img">
+                    <div class="stores-up-svg"></div>
+                </div>
+                <div class="stores-pin-img">
+                    <div class="stores-pin-svg"></div>
+                </div>
+            </div>
+
+            <div class="stores-list-block">
+
+                <div class="stores-list" id="stores-list">
+                </div>
+
+            </div>
+
+            <footer class="stores-footer-block">
+                <button class="stores-footer-button" id="create-new-store">
+                    <div class="button-plus">+</div>
+                    <div class="button-text">Create</div>
+                </button>
+            </footer>
+
+        </aside>
+
+        <div class="not-selected-container" id="not-selected">
+            <div class="not-selected-title">Store is not selected</div>
+            <div class="store-svg-container">
+                <div class="store-svg"></div>
+                <div class="not-selected-text-1">The store is not selected</div>
+                <div class="not-selected-text-2">Please select the store to proceed</div>
+            </div>
+        </div>
+
+        <section class="current-store-wrapper" id="current-store">
+
+            <div class="current-store-block">
+
+                <header>
+                    <h4 class="current-store-title">Store Details</h4>
+                </header>
+
+                <div class="current-store-info" id="store-info">
+
+                </div>
+
+                <div class="store-icons">
+                    <div class="store-up-img">
+                        <div class="store-up-svg"></div>
+                    </div>
+                    <div class="store-pin-img">
+                        <div class="store-pin-svg"></div>
+                    </div>
+                </div>
+
+                <div class="store-products-filter" id="products-statuses">
+
+                </div>
+
+                <div class="products-amount-line"></div>
+
+            </div>
+
+            <div class="products-table">
+
+                <table class="table">
+
+                    <thead class="table-title-container">
+                        <td colspan="5" class="table-title">Products</td>
+                        <td colspan="2" class="product-search-input">
+
+                            <div class="search-container" id="product-search-id">
+                                <input type="text" placeholder="Enter value to search" class="search-input"
+                                    id="product-filter">
+                                <div class="delete-img" id="delete-product-filter-id"></div>
+                                <div class="search-img" id="search-product-filter-id"></div>
+                                <div class="refresh-img" id="refresh-product-filter-id"></div>
+                            </div>
+
+                        </td>
+                    </thead>
+
+                    <tr class="table-columns-titles">
+                        <th>
+                            <div class="sort-btn" id="sort-name" data-column="Name"></div>Name
+                        </th>
+                        <th class="product-price-clmn">
+                            <div class="sort-btn" id="sort-price" data-column="Price"></div>Price
+                        </th>
+                        <th>
+                            <div class="sort-btn" id="sort-specs" data-column="Specs"></div>Specs
+                        </th>
+                        <th>
+                            <div class="sort-btn" id="sort-supplier-info" data-column="SupplierInfo"></div>SupplierInfo
+                        </th>
+                        <th>
+                            <div class="sort-btn" id="sort-country" data-column="MadeIn"></div>Country of origin
+                        </th>
+                        <th>
+                            <div class="sort-btn" id="sort-company" data-column="ProductionCompanyName"></div>Prod.
+                            company
+                        </th>
+                        <th>
+                            <div class="sort-btn" id="sort-raiting" data-column="Rating"></div>Rating
+                        </th>
+                    </tr>
+
+                    <tbody id="products-list">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <footer class="store-footer-container">
+                <button class="store-button-create" id="create-new-product">
+                    <div class="footer-plus">+</div>
+                    <div class="button-create-text">Create</div>
+                </button>
+                <button class="store-button-delete" id="store-button-delete">
+                    <div class="trash"></div>
+                    <div class="button-delete-text">Delete</div>
+                </button>
+            </footer>
+
+        </section>
+
+        <div class="create-new-product-wrapper">
+
+            <div class="create-new-product">
+
+                <div class="create-new-product-header">Create new product</div>
+
+                <div class="create-product-name">
+                    <div class=new-product-name>
+                        <i>*</i>Name:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter name">
+                </div>
+
+                <div class="create-product-price">
+                    <div class=new-product-price>
+                        <i>*</i>Price:
+                    </div>
+                    <input type="text" class="new-product-input-price" placeholder="Enter price"> USD
+                </div>
+
+                <div class="create-product-specs">
+                    <div class=new-product-specs>
+                        <i>*</i>Specs:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter product specs">
+                </div>
+
+                <div class="create-product-raiting">
+                    <div class=new-product-raiting>
+                        <i>*</i>Raiting:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter product raiting 1...5">
+                </div>
+
+                <div class="create-product-info">
+                    <div class=new-product-info>
+                        <i>*</i>Supplier info:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter supplier info">
+                </div>
+
+                <div class="create-product-made">
+                    <div class=new-product-made>
+                        <i>*</i>Made in:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter orogin country">
+                </div>
+
+                <div class="create-product-company">
+                    <div class=new-product-company>
+                        <i>*</i>Productation company name:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter manufacturer name">
+                </div>
+
+                <div class="create-product-status">
+                    <div class=new-product-status>
+                        <i>*</i>Status:
+                    </div>
+                    <select type="text" class="new-product-input">
+                        <option value="Status">Enter status</option>
+                        <option value="Ok">Ok</option>
+                        <option value="Storage">Storage</option>
+                        <option value="Out of stock">Out of stock</option>
+                    </select>
+                </div>
+
+                <div class="create-new-product-footer">
+                    <div class="product-footer-buttons">
+                        <button class="create-product-btn">Create</button>
+                        <button class="cancel-product-btn">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="create-new-store-wrapper" id="new-store-window">
+
+            <div class="create-new-store">
+
+                <div class="create-new-store-header">Create new store</div>
+
+                <div class="create-store-name">
+                    <div class=new-store-name>
+                        <i>*</i>Name:
+                    </div>
+                    <input type="text" class="new-store-input" placeholder="Enter name" id="new-store-name">
+                </div>
+
+                <div class="create-store-email">
+                    <div class=new-store-email>
+                        <i>*</i>Email:
+                    </div>
+                    <input type="text" class="new-store-input" placeholder="Enter email" id="new-store-email">
+                </div>
+
+                <div class="create-store-phone">
+                    <div class=new-store-phone>
+                        <i>*</i>Phone:
+                    </div>
+                    <input type="text" class="new-store-input" placeholder="Enter phone number" id="new-store-phone">
+                </div>
+
+                <div class="create-store-address">
+                    <div class=new-store-address>
+                        <i>*</i>Address:
+                    </div>
+                    <input type="text" class="new-store-input" placeholder="Enter store address" id="new-store-address">
+                </div>
+
+                <div class="create-store-established">
+                    <div class=new-store-established>
+                        <i>*</i>Established date:
+                    </div>
+                    <input type="date" class="new-store-input" placeholder="Enter established date" id="new-store-established">
+                </div>
+
+                <div class="create-store-area">
+                    <div class=new-store-area>
+                        <i>*</i>Floor area:
+                    </div>
+                    <input type="text" class="new-store-input" placeholder="Enter floor area" id="new-store-area">
+                </div>
+
+                <div class="create-new-store-footer">
+                    <div class="store-footer-buttons">
+                        <button class="create-store-btn" id="create-store-btn">Create</button>
+                        <button class="cancel-store-btn" id="cancel-new-store-creation">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="delete-product-confirm-window-wrapper" id="delete-product-confirm-window-wrapper">
+            <div class="delete-product-confirm-window">
+                <div>Are you sure you want to delete the selected product?</div>
+                <div>
+                    <button class="delete-product-btn-confirm">Delete</button>
+                    <button class="cancel-product-btn-confirm" id="cancel-product-btn-confirm">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="delete-store-confirm-window-wrapper" id="delete-store-confirm-window-wrapper">
+            <div class="delete-store-confirm-window">
+                <div>Are you sure you want to delete current store?</div>
+                <div>
+                    <button class="delete-store-btn-confirm" id="delete-store-btn-confirm">Delete</button>
+                    <button class="cancel-store-btn-confirm" id="cancel-store-btn-confirm">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="create-new-product-wrapper" id="new-product-window">
+
+            <div class="create-new-product">
+
+                <div class="create-new-product-header">Create new product</div>
+
+                <div class="create-product-name">
+                    <div class=new-product-name>
+                        <i>*</i>Name:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter name">
+                </div>
+
+                <div class="create-product-price">
+                    <div class=new-product-price>
+                        <i>*</i>Price:
+                    </div>
+                    <input type="text" class="new-product-input" id="product-price" placeholder="Enter price"> USD
+                </div>
+
+                <div class="create-product-specs">
+                    <div class=new-product-specs>
+                        <i>*</i>Specs:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter product specs">
+                </div>
+
+                <div class="create-product-raiting">
+                    <div class=new-product-raiting>
+                        <i>*</i>Raiting:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter product raiting 1...5">
+                </div>
+
+                <div class="create-product-info">
+                    <div class=new-product-info>
+                        <i>*</i>Supplier info:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter supplier info">
+                </div>
+
+                <div class="create-product-made">
+                    <div class=new-product-made>
+                        <i>*</i>Made in:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter orogin country">
+                </div>
+
+                <div class="create-product-company">
+                    <div class=new-product-company>
+                        <i>*</i>Productation company name:
+                    </div>
+                    <input type="text" class="new-product-input" placeholder="Enter manufacturer name">
+                </div>
+
+                <div class="create-product-status">
+                    <div class=new-product-status>
+                        <i>*</i>Status:
+                    </div>
+                    <select type="text" class="new-product-input">
+                        <option value="Status">Enter status</option>
+                        <option value="Ok">Ok</option>
+                        <option value="Storage">Storage</option>
+                        <option value="Out of stock">Out of stock</option>
+                    </select>
+                </div>
+
+                <div class="create-new-product-footer">
+                    <div class="product-footer-buttons">
+                        <button class="create-product-btn">Create</button>
+                        <button class="cancel-product-btn" id="cancel-new-product-creation">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
